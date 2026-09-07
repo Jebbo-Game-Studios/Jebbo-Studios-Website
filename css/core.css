@@ -1,0 +1,344 @@
+/* ============================================================
+   CORE
+============================================================ */
+
+:root {
+
+  --background: #06111f;
+  --background-light: #091827;
+
+  --surface: #0b1a2b;
+  --surface-light: #102438;
+
+  --blue: #078fe0;
+  --blue-bright: #16b9f2;
+
+  --cyan: #24d5d0;
+  --cyan-dark: #0d9fa9;
+
+  --white: #f4f9fc;
+  --text: #dce8ef;
+  --muted: #8da4b6;
+  --muted-dark: #5f778b;
+
+  --border: rgba(117, 181, 214, 0.16);
+  --border-bright: rgba(70, 205, 229, 0.35);
+
+  --container: 1180px;
+
+  --transition: 220ms ease;
+
+}
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--background);
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+
+::selection {
+  background: var(--cyan);
+  color: var(--background);
+}
+
+
+
+/* ============================================================
+   CONTAINER
+============================================================ */
+
+.container {
+
+  width: min(
+    var(--container),
+    calc(100% - 48px)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #17354b;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #20526f;
+}
+
+
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.button {
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 52px;
+
+  padding:
+    0 22px;
+
+  border-radius: 5px;
+
+  font-size: .84rem;
+
+  font-weight: 800;
+
+  letter-spacing: .04em;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+
+}
+
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+
+.button-primary {
+
+  color: #03111d;
+
+  background:
+    linear-gradient(
+      105deg,
+      var(--blue),
+      var(--cyan)
+    );
+
+  box-shadow:
+    0 12px 35px rgba(0, 164, 220, .18);
+
+}
+
+
+.button-primary:hover {
+
+  box-shadow:
+    0 17px 45px rgba(0, 190, 220, .3);
+
+}
+
+
+.button-outline {
+
+  color: var(--white);
+
+  border: 1px solid var(--border);
+
+  background:
+    rgba(255,255,255,.025);
+
+}
+
+
+.button-outline:hover {
+
+  border-color: var(--border-bright);
+
+  background:
+    rgba(255,255,255,.05);
+
+}
+
+
+
+/* ============================================================
+   REVEAL ANIMATION
+============================================================ */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(25px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+
+}
+
+
+.reveal.revealed {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.reveal-delay {
+  transition-delay: 180ms;
+}
+
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+}
+
+.link-container {
+  display: flex;       /* Aligns the links side-by-side */
+  gap: 15px;           /* Adds space between the two links */
+  align-items: center; /* Aligns them vertically if they have different heights */
+}
