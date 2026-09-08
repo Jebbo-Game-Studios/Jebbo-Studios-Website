@@ -1777,10 +1777,14 @@ body {
 
 .studio-cta-inner h2 span {
   display: block;
-  color: #e6f4fb; /* Fallback for browsers that don't support text stroke */
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgba(230,244,251,.72);
+  color: var(--background); /* Or match your background color if transparent fails */
+  text-shadow:
+    -1px -1px 0 rgba(230,244,251,.72),
+     1px -1px 0 rgba(230,244,251,.72),
+    -1px  1px 0 rgba(230,244,251,.72),
+     1px  1px 0 rgba(230,244,251,.72);
 }
+
 
 
 
