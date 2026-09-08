@@ -1777,12 +1777,11 @@ body {
 
 .studio-cta-inner h2 span {
   display: block;
-
-  color: transparent;
-
-  -webkit-text-stroke:
-    1px rgba(230,244,251,.72);
+  color: #e6f4fb; /* Fallback for browsers that don't support text stroke */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(230,244,251,.72);
 }
+
 
 
 .studio-cta-inner > p {
