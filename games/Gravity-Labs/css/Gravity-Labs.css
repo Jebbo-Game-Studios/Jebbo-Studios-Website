@@ -217,11 +217,14 @@ body {
 
 .hero-copy h1 span {
   display: block;
+  color: var(--background); /* Or match your background color if transparent fails */
+  text-shadow:
+    -1px -1px 0 rgba(230,244,251,.72),
+     1px -1px 0 rgba(230,244,251,.72),
+    -1px  1px 0 rgba(230,244,251,.72),
+     1px  1px 0 rgba(230,244,251,.72);
 
-  color: transparent;
-
-  -webkit-text-stroke:
-    1px rgba(230, 244, 251, .72);
+  letter-spacing: 0.003em;
 }
 
 
@@ -634,11 +637,14 @@ body {
 
 .intro-heading h2 span {
   display: block;
+  color: var(--background); /* Or match your background color if transparent fails */
+  text-shadow:
+    -1px -1px 0 rgba(230,244,251,.72),
+     1px -1px 0 rgba(230,244,251,.72),
+    -1px  1px 0 rgba(230,244,251,.72),
+     1px  1px 0 rgba(230,244,251,.72);
 
-  color: transparent;
-
-  -webkit-text-stroke:
-    1px rgba(230,244,251,.7);
+  letter-spacing: 0.003em;
 }
 
 
@@ -750,10 +756,15 @@ body {
 
 
 .section-heading h2 span {
-  color: transparent;
+  display: block;
+  color: var(--background); /* Or match your background color if transparent fails */
+  text-shadow:
+    -1px -1px 0 rgba(230,244,251,.72),
+     1px -1px 0 rgba(230,244,251,.72),
+    -1px  1px 0 rgba(230,244,251,.72),
+     1px  1px 0 rgba(230,244,251,.72);
 
-  -webkit-text-stroke:
-    1px rgba(230,244,251,.7);
+  letter-spacing: 0.003em;
 }
 
 
@@ -1378,10 +1389,15 @@ body {
 
 
 .download-copy h2 span {
-  color: transparent;
+  display: block;
+  color: var(--background); /* Or match your background color if transparent fails */
+  text-shadow:
+    -1px -1px 0 rgba(230,244,251,.72),
+     1px -1px 0 rgba(230,244,251,.72),
+    -1px  1px 0 rgba(230,244,251,.72),
+     1px  1px 0 rgba(230,244,251,.72);
 
-  -webkit-text-stroke:
-    1px rgba(230,244,251,.7);
+  letter-spacing: 0.003em;
 }
 
 
@@ -1783,6 +1799,8 @@ body {
      1px -1px 0 rgba(230,244,251,.72),
     -1px  1px 0 rgba(230,244,251,.72),
      1px  1px 0 rgba(230,244,251,.72);
+
+  letter-spacing: 0.003em;
 }
 
 
