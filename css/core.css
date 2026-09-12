@@ -809,3 +809,297 @@ h4 {
 
   }
 }
+
+/* ============================================================
+   SCREENSHOTS
+============================================================ */
+
+.screenshots-section {
+  padding:
+    140px 0;
+
+  background:
+    #06111d;
+}
+
+
+.screenshot-feature {
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 22px;
+
+  background:
+    #081827;
+}
+
+
+.screenshot-main {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  overflow: hidden;
+}
+
+
+.screenshot-main img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  transition:
+    transform 500ms ease,
+    filter 500ms ease;
+}
+
+
+.screenshot-main::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,.12),
+      transparent 55%,
+      rgba(0,0,0,.28)
+    );
+
+  pointer-events: none;
+}
+
+
+.screenshot-main:hover img {
+  transform:
+    scale(1.025);
+
+  filter:
+    brightness(1.08);
+}
+
+
+.screenshot-expand {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid rgba(255,255,255,.2);
+
+  border-radius: 4px;
+
+  background:
+    rgba(4,12,21,.65);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+
+.screenshot-main:hover .screenshot-expand {
+  border-color:
+    var(--border-bright);
+
+  background:
+    rgba(5,22,34,.9);
+
+  color: var(--cyan);
+}
+
+
+.screenshot-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 14px;
+
+  margin-top: 14px;
+}
+
+
+.screenshot-thumb {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  background:
+    #081827;
+}
+
+
+.screenshot-thumb img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  transition:
+    transform 450ms ease,
+    filter 450ms ease;
+}
+
+
+.screenshot-thumb:hover {
+  border-color:
+    var(--border-bright);
+}
+
+
+.screenshot-thumb:hover img {
+  transform:
+    scale(1.04);
+
+  filter:
+    brightness(1.08);
+}
+
+/* ============================================================
+   LIGHTBOX
+============================================================ */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 300;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    rgba(2,8,14,.94);
+
+  backdrop-filter:
+    blur(16px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 220ms ease;
+}
+
+
+.lightbox.active {
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+
+.lightbox img {
+  max-width: min(1200px, 94vw);
+  max-height: 88vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.5);
+}
+
+
+.lightbox-close {
+  position: absolute;
+
+  top: 24px;
+  right: 24px;
+
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255,255,255,.025);
+
+  color: white;
+
+  font-size: 1.6rem;
+
+  line-height: 1;
+
+  transition:
+    border-color var(--transition),
+    color var(--transition);
+}
+
+
+.lightbox-close:hover {
+  border-color:
+    var(--border-bright);
+
+  color: var(--cyan);
+}
